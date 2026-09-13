@@ -1,0 +1,16 @@
+{
+  "name": "memecoin-alert-bot",
+  "version": "1.0.0",
+  "description": "Scans young Solana meme coins for early volume + liquidity spikes and alerts a Discord channel via webhook.",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
