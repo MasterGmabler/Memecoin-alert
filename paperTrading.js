@@ -25,8 +25,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
-const TAKE_PROFIT_PCT = parseFloat(process.env.TAKE_PROFIT_PCT || '50');
+const DISCORD_WEBHOOK_URL = process.env.PAPER_TRADE_WEBHOOK_URL; 
 const STOP_LOSS_PCT = parseFloat(process.env.STOP_LOSS_PCT || '20');
 const MAX_HOLD_HOURS = parseFloat(process.env.MAX_HOLD_HOURS || '24');
 const CHECK_INTERVAL_MS = parseInt(process.env.CHECK_INTERVAL_MS || '60000', 10);
