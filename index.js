@@ -14,7 +14,7 @@
 // Docs: https://docs.dexscreener.com/api/reference
 
 import 'dotenv/config';
-import http from 'node:http';
+import http from 'node:http'; import { openPaperTrade, startMonitoring } from './paperTrading.js';
 
 // ---------- Config ----------
 const CFG = {
@@ -236,7 +236,7 @@ async function sendAlert(pair, signal) {
   if (!res.ok) {
     console.error(`Discord webhook failed: HTTP ${res.status} ${await res.text()}`);
   } else {
-    console.log(`Alerted on ${symbol} (${address})`);
+    console.log(`Alerted on ${symbol} (${address})`);openPaperTrade(address, symbol);
   }
 }
 
@@ -312,6 +312,7 @@ async function main() {
   console.log('Reminder: this surfaces early momentum, it does not predict outcomes. Not financial advice.');
 
   startHeartbeatServer();
+    startMonitoring();
 
   // Run immediately, then on the configured interval.
   await tick().catch((err) => console.error('tick failed:', err));
